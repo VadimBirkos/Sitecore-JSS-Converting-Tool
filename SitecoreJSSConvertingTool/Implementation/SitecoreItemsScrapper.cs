@@ -76,8 +76,6 @@ namespace SitecoreJSSConvertingTool.Implementation
 
             foreach (var field in templateItem.OwnFields)
             {
-
-
                 resultList.Add(new SitecoreField(field.Name, field.Type));
             }
             return resultList;
