@@ -9,10 +9,20 @@ namespace SitecoreJSSConvertingTool.Implementation
 {
     public class SitecoreItemsScrapper : ISitecoreItemsScrapper
     {
+        public SitecoreItemsScrapper()
+        {
+            ContentDatabase = Sitecore.Configuration.Factory.GetDatabase("master");
+        }
+        public Database ContentDatabase { get; set; }
         public List<JssComponent> GetElementsById(ID rootElementId)
         {
             var resultList = new List<JssComponent>();
-            var item = Sitecore.Context.Database.GetItem(rootElementId);
+            var item = ContentDatabase.GetItem(rootElementId);
+
+            if(item == null)
+            {
+                return null;
+            }
 
             if (item.TemplateID == Constants.SitecoreIds.FolderTemplateId)
             {
@@ -61,7 +71,7 @@ namespace SitecoreJSSConvertingTool.Implementation
         private List<SitecoreField> GetDataSourceTemplateFields(string pathToTemplate)
         {
             var resultList = new List<SitecoreField>();
-            var dataSourceTemplateItem = Sitecore.Context.Database.GetItem(pathToTemplate);
+            var dataSourceTemplateItem = ContentDatabase.GetItem(pathToTemplate);
 
             if (dataSourceTemplateItem == null)
             {
