@@ -17,6 +17,5 @@ namespace SitecoreJSSConvertingTool.Models
 
         public string FieldName { get; set; }
         public string FieldType { get; set; }
-        public List<SitecoreField> InternalFields { get; set; } 
     }
 }
