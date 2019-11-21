@@ -5,15 +5,18 @@ using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
 using SitecoreJSSConvertingTool.Implementation;
 using SitecoreJSSConvertingTool.Interface;
+using SitecoreJSSConvertingTool.Services;
 
 namespace SitecoreJSSConvertingTool.Command
 {
     public class ConvertToJssProjectCommand : Sitecore.Shell.Framework.Commands.Command
     {
         private readonly ISitecoreItemsScrapper _itemsScrapper;
+        private readonly IRectComponentCreator _componentCreator;
 
         public ConvertToJssProjectCommand()
         {
+            _componentCreator = new RectComponentCreator();
             _itemsScrapper = new SitecoreItemsScrapper();
         }
 
@@ -31,7 +34,7 @@ namespace SitecoreJSSConvertingTool.Command
                     return;
                 }
                 var items = _itemsScrapper.GetElementsById(item.ID);
-                
+                _componentCreator.ComponentMapping(items);
             }
 
         }

@@ -17,8 +17,8 @@ namespace SitecoreJSSConvertingTool
                 {"Text", "Text" },
                 {"Integer", "Text" },
                 {"Number", "Text" },
-                {"Multi-line Text", "Text" },
-                {"Single-line Text", "Text" },
+                {"Multi-Line Text", "Text" },
+                {"Single-Line Text", "Text" },
                 {"Password", "Text" },
                 {"Other", "Field" },
             };

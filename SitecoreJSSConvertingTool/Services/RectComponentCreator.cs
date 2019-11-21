@@ -28,9 +28,7 @@ namespace SitecoreJSSConvertingTool.Services
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
-                File.Create($"{path}/index.js");
-
-                using (StreamWriter sw = File.CreateText(path))
+                using (StreamWriter sw = File.CreateText($"{path}/index.js"))
                 {
                     if (component.Fields.Count <= 0)
                         this.WriteEmptyRendering(sw, component.Name);
