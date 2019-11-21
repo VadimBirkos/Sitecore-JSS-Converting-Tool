@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="sitecore\SitecoreScaffold.aspx" />
+    <Content Include="App_Config\Sitecore\CMS.Core\CustomCommands.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
@@ -99,9 +100,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="AppConfig\Sitecore\CMS.Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
