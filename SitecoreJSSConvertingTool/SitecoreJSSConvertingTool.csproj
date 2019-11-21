@@ -92,7 +92,6 @@
     <Compile Include="Interface\ISitecoreItemsScrapper.cs" />
     <Compile Include="Models\JssComponent.cs" />
     <Compile Include="Models\SitecoreField.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sitecore\SitecoreScaffold.aspx.cs">
       <DependentUpon>SitecoreScaffold.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
