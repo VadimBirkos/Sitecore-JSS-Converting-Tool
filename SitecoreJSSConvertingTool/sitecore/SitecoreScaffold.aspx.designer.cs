@@ -11,7 +11,7 @@ namespace SitecoreJSSConvertingTool.sitecore
 {
 
 
-    public partial class Test
+    public partial class SitecoreScaffold
     {
     }
 }

@@ -5,11 +5,11 @@ using SitecoreJSSConvertingTool.Interface;
 
 namespace SitecoreJSSConvertingTool.sitecore
 {
-    public partial class Test : System.Web.UI.Page
+    public partial class SitecoreScaffold : System.Web.UI.Page
     {
         private readonly ISitecoreItemsScrapper _itemsScrapper;
 
-        public Test()
+        public SitecoreScaffold()
         {
             _itemsScrapper = new SitecoreItemsScrapper();
         }

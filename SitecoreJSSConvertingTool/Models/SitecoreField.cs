@@ -1,4 +1,6 @@
-﻿namespace SitecoreJSSConvertingTool.Models
+﻿using System.Collections.Generic;
+
+namespace SitecoreJSSConvertingTool.Models
 {
     public class SitecoreField
     {
@@ -15,5 +17,6 @@
 
         public string FieldName { get; set; }
         public string FieldType { get; set; }
+        public List<SitecoreField> InternalFields { get; set; } 
     }
 }

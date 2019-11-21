@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SitecoreScaffold.aspx.cs" Inherits="SitecoreJSSConvertingTool.sitecore.Test" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SitecoreScaffold.aspx.cs" Inherits="SitecoreJSSConvertingTool.sitecore.SitecoreScaffold" %>
 
 <!DOCTYPE html>
 
