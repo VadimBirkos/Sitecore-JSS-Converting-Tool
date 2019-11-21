@@ -4,8 +4,9 @@ using Sitecore.Diagnostics;
 using Sitecore.Shell.Framework.Commands;
 using Sitecore.Web.UI.Sheer;
 using SitecoreJSSConvertingTool.Implementation;
+using SitecoreJSSConvertingTool.Implementation.Services;
 using SitecoreJSSConvertingTool.Interface;
-using SitecoreJSSConvertingTool.Services;
+using SitecoreJSSConvertingTool.Interface.Services;
 
 namespace SitecoreJSSConvertingTool.Command
 {

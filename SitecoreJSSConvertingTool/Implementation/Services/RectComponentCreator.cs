@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Sitecore.StringExtensions;
 using SitecoreJSSConvertingTool.Interface;
+using SitecoreJSSConvertingTool.Interface.Services;
 using SitecoreJSSConvertingTool.Models;
 
-namespace SitecoreJSSConvertingTool.Services
+namespace SitecoreJSSConvertingTool.Implementation.Services
 {
     public class RectComponentCreator : IRectComponentCreator
     {

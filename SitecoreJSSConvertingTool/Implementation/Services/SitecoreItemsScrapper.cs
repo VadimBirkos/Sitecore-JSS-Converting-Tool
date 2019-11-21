@@ -3,9 +3,10 @@ using System.Linq;
 using Sitecore.Data;
 using Sitecore.Data.Items;
 using SitecoreJSSConvertingTool.Interface;
+using SitecoreJSSConvertingTool.Interface.Services;
 using SitecoreJSSConvertingTool.Models;
 
-namespace SitecoreJSSConvertingTool.Implementation
+namespace SitecoreJSSConvertingTool.Implementation.Services
 {
     public class SitecoreItemsScrapper : ISitecoreItemsScrapper
     {

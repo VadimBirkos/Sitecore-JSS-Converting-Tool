@@ -84,12 +84,12 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="FieldMapping.cs" />
-    <Compile Include="Interface\IRectComponentCreator.cs" />
-    <Compile Include="Services\RectComponentCreator.cs" />
+    <Compile Include="Interface\Services\IRectComponentCreator.cs" />
+    <Compile Include="Implementation\Services\RectComponentCreator.cs" />
     <Compile Include="Command\ConvertToJssProjectCommand.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Implementation\SitecoreItemsScrapper.cs" />
-    <Compile Include="Interface\ISitecoreItemsScrapper.cs" />
+    <Compile Include="Implementation\Services\SitecoreItemsScrapper.cs" />
+    <Compile Include="Interface\Services\ISitecoreItemsScrapper.cs" />
     <Compile Include="Models\JssComponent.cs" />
     <Compile Include="Models\SitecoreField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

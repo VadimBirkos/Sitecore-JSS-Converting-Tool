@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using SitecoreJSSConvertingTool.Models;
 
-namespace SitecoreJSSConvertingTool.Interface
+namespace SitecoreJSSConvertingTool.Interface.Services
 {
     public interface IRectComponentCreator
     {
