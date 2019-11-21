@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Sitecore.StringExtensions;
 using SitecoreJSSConvertingTool.Interface;
 using SitecoreJSSConvertingTool.Models;
 
@@ -52,12 +53,15 @@ namespace SitecoreJSSConvertingTool.Services
             this.ImportJssComponents(sw, component.Fields);
 
             sw.WriteLine($"const {component.Name} = props => ( ");
-
+            sw.WriteLine("<div>");
             component.Fields.ForEach(field =>
             {
-                if (FieldMapping.Mapping[field.FieldType] != null)
-                    sw.WriteLine($"<{FieldMapping.Mapping[field.FieldType]} field={{props.{field.FieldName}}}/>");
+                if (FieldMapping.Mapping.ContainsKey(field.FieldType))
+                    sw.WriteLine($"<{FieldMapping.Mapping[field.FieldType]} field={{props.{field.FieldName.Replace(" ", "")}}}/>");
+                else
+                    sw.WriteLine($"//Cant found {field.FieldType} Sitecore type field from JSS");
             });
+            sw.WriteLine("</div>");
 
             sw.WriteLine(");");
             sw.WriteLine($"export default {component.Name}; ");
@@ -69,10 +73,10 @@ namespace SitecoreJSSConvertingTool.Services
             sw.Write("import {");
             fields.ForEach(field =>
             {
-                if (FieldMapping.Mapping[field.FieldType] != null)
-                    sw.Write($", {FieldMapping.Mapping[field.FieldType]}");
+                if (FieldMapping.Mapping.ContainsKey(field.FieldType))
+                    sw.Write($"{FieldMapping.Mapping[field.FieldType]}, ");
             });
-            sw.Write(" from \"@sitecore-jss/sitecore-jss-react\";");
+            sw.Write("} from \"@sitecore-jss/sitecore-jss-react\";");
         }
     }
 }

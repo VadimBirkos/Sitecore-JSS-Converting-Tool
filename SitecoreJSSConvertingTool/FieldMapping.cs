@@ -13,7 +13,7 @@ namespace SitecoreJSSConvertingTool
                 {"Word Document", "File" },
                 {"Image", "Image"},
                 {"Link", "Link" },
-                {"RichText", "RichText"},
+                {"Rich Text", "RichText"},
                 {"Text", "Text" },
                 {"Integer", "Text" },
                 {"Number", "Text" },
