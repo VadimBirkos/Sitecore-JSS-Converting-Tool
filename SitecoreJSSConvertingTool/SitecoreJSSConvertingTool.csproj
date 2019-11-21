@@ -75,6 +75,7 @@
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\ConvertToJssProjectCommand.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Implementation\SitecoreItemsScrapper.cs" />
     <Compile Include="Interface\ISitecoreItemsScrapper.cs" />
@@ -98,7 +99,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="AppConfig\Sitecore\CMS.Core\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
