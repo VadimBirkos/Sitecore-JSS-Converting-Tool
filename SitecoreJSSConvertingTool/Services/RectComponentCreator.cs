@@ -56,8 +56,10 @@ namespace SitecoreJSSConvertingTool.Services
             sw.WriteLine($"const {component.Name} = props => ( ");
 
             component.Fields.ForEach(field =>
-                sw.WriteLine($"<{FieldMapping.Mapping[field.FieldType]} field={{props.{field.FieldName}}}>" +
-                                $"</{FieldMapping.Mapping[field.FieldType]}>"));
+            {
+                if (FieldMapping.Mapping[field.FieldType] != null)
+                    sw.WriteLine($"<{FieldMapping.Mapping[field.FieldType]} field={{props.{field.FieldName}}}/>");
+            });
 
             sw.WriteLine(");");
             sw.WriteLine($"export default {component.Name}; ");
@@ -67,7 +69,11 @@ namespace SitecoreJSSConvertingTool.Services
         private void ImportJssComponents(StreamWriter sw, List<SitecoreField> fields)
         {
             sw.Write("import {");
-            fields.ForEach(field => sw.Write($", {FieldMapping.Mapping[field.FieldType]}"));
+            fields.ForEach(field =>
+            {
+                if (FieldMapping.Mapping[field.FieldType] != null)
+                    sw.Write($", {FieldMapping.Mapping[field.FieldType]}");
+            });
             sw.Write(" from \"@sitecore-jss/sitecore-jss-react\";");
         }
     }
