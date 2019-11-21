@@ -23,11 +23,13 @@ namespace SitecoreJSSConvertingTool.Services
 
         private void CreateReactComponent(JssComponent component)
         {
-            string path = $"{Config.ApplicationFolderLocation}/scr/components/{component.Name}/index.js";
+            string path = $"{Config.ApplicationFolderLocation}/scr/components/{component.Name}";
 
-            if (!File.Exists(path))
+            if (!Directory.Exists(path))
             {
-                File.Create(path);
+                Directory.CreateDirectory(path);
+                File.Create($"{path}/index.js");
+
                 using (StreamWriter sw = File.CreateText(path))
                 {
                     if (component.Fields.Count <= 0)
